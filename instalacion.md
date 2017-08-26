@@ -1,6 +1,6 @@
 # Instalación
 
-## Node.js y NPM
+## 1.1 Node.js y NPM
 
 Vue.js no especifica una única forma de instalación, sino que permite al desarrollador escoger la que más se acomode a sus necesidades, pero para un mejor control yo recomiendo utilizar NPM \([https://www.npmjs.com](https://www.npmjs.com)\).
 
@@ -12,7 +12,9 @@ npm init
 
 Luego debemos responder las preguntas que npm nos haga:
 
-    >npm init
+See \`npm help json\` for definitive documentation on these fields
+
+    npm init
     This utility will walk you through creating a package.json file.
     It only covers the most common items, and tries to guess sensible defaults.
 
@@ -53,7 +55,16 @@ Luego debemos responder las preguntas que npm nos haga:
 
     Is this ok? (yes)
 
-Al finalizar se habrá generado un archivo llamado **package.json** dentro del directorio.
+Al finalizar se habrá generado un archivo llamado **package.json** dentro del directorio, con el contenido descrito.
+
+### 1.1.1 Instalación de paquetes con NPM
+
+Una vez iniciado el proyecto procedemos a instalar los paquetes necesarios para el desarrollo de nuestro cliente:
+
+Debemos agrupar los paquetes en 2 categorías:
+
+* Paquetes que solo se utilizarán durante el desarrollo \(minificadores, transpiladores\)
+* Paquetes que el cliente requiere para funcionar
 
 ## Gulp
 
