@@ -63,8 +63,21 @@ Una vez iniciado el proyecto procedemos a instalar los paquetes necesarios para 
 
 Debemos agrupar los paquetes en 2 categorías:
 
-* Paquetes que solo se utilizarán durante el desarrollo \(minificadores, transpiladores\)
-* Paquetes que el cliente requiere para funcionar
+* Paquetes que solo se utilizarán durante el desarrollo \(minificadores, transpiladores\), estos los instalaremos utilizando el comando: 
+
+```
+npm install [package_name] --save-dev
+```
+
+* Paquetes que el cliente requiere para funcionar, estos lo instalaremos utilizando:
+
+```
+npm install [package_name] --save
+```
+
+Que paquetes necesitamos para iniciar:
+
+
 
 ## Gulp
 
