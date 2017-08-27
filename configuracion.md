@@ -97,7 +97,11 @@ gulp.task('serve', ['watch'], function() {
         server: {
             baseDir: './',
             index: 'index.dev.html'
-        }
+        },
+        serveStatic: [{
+            route: '/dist',
+            dir: './dev'
+        }]
     });
 });
 ```
