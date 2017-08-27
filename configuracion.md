@@ -4,6 +4,10 @@
 
 Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 
+Para definir una tarea utilizamos gulp.task\(\[nombre-de-la-tarea\], \[funcion\]\);
+
+Este es un ejemplo de un gulpfile que podemos usar como base para cualquier proyecto, con las tareas básicas necesarias para iniciar el desarrollo:
+
 ```js
 "use strict"
 
@@ -79,9 +83,9 @@ gulp.task('serve', ['watch'], function() {
 });
 ```
 
-
-
 ### 2.1.1 .babelrc
+
+Browserify utiliza Babel a través del plugin babelify para transformar 
 
 ```json
 {

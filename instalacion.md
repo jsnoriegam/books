@@ -136,7 +136,7 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n�
 }
 ```
 
-## Browserify
+## 1.2 Browserify
 
 Browserify es una herramienta que básicamente nos permite hacer **require** a los paquetes de node \(npm\) desde el cliente del navegador Ej.:
 
@@ -146,7 +146,7 @@ var Vue = require('vue');
 
 Y ademá nos permite crear bundles que mejorarán el rendimiento de nuestra aplicación web.
 
-## Gulp
+## 1.3 Gulp
 
 Gulp \([https://gulpjs.com](https://gulpjs.com)\) es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
 
@@ -157,4 +157,6 @@ npm install gulp-cli -g
 ```
 
 Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
+
+Si no queremos o no podemos instalar el gulp-cli, tambien es posible utilizar gulp a través de npm configurando el comando en la sección **scripts** del package.json
 
