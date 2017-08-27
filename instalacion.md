@@ -136,27 +136,5 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n�
 }
 ```
 
-## 1.2 Browserify
 
-Browserify es una herramienta que básicamente nos permite hacer **require** a los paquetes de node \(npm\) desde el cliente del navegador Ej.:
-
-```js
-var Vue = require('vue');
-```
-
-Y ademá nos permite crear bundles que mejorarán el rendimiento de nuestra aplicación web.
-
-## 1.3 Gulp
-
-Gulp \([https://gulpjs.com](https://gulpjs.com)\) es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
-
-Para utilizar Gulp además de los paquetes instalados anteriormente en el proyecto debemos instalar el paquete del cliente de linea de comandos de gulp, este paquete debe ser instaldo de manera global, esto lo hacemos con el siguiente comando:
-
-```
-npm install gulp-cli -g
-```
-
-Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
-
-Si no queremos o no podemos instalar el gulp-cli, tambien es posible utilizar gulp a través de npm configurando el comando en la sección **scripts** del package.json
 
