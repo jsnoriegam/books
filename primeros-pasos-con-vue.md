@@ -2,7 +2,7 @@
 
 ## 3.1 main.js
 
-El primer paso para iniciar nuestra aplicación es crear el index.html, la página que iniciará todo:
+El primer paso para iniciar nuestra aplicación es necesario crear un index.html, la página que iniciará todo:
 
 ```html
 <!DOCTYPE html>
