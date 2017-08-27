@@ -187,7 +187,6 @@ function createBundler(args) {
         .transform(vueify)
         .transform(babelify)
         .transform(envify)
-        //.transform(uglify, {global: true});
 }
 
 function bundle(bundler, dest = 'dist') {
@@ -229,7 +228,6 @@ gulp.task('serve', ['watch'], function() {
         }
     });
 });
-
 ```
 
 
