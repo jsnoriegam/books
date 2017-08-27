@@ -15,12 +15,17 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 //Uglify minifica el javascript generado
 const uglify = require('gulp-uglify');
+//Crea sourcemaps -necesarios para hacer debug-
+//https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
 const sourcemaps = require('gulp-sourcemaps');
 
 const browserify = require('browserify');
 const browserifyShim = require('browserify-shim');
+//Permite el uso de componentes .vue
 const vueify = require('vueify');
 //Babel es un transpilador de Ecmascript 2015/16
+//Básicamente nos permite utilizar la nueva sintaxis de javascript
+//y la transforma a la sintaxis soportada por los navegadores actuales
 const babelify = require('babelify');
 //Envify me permite utilizar process.env.NODE_ENV dentro de la app
 //para determinar si el código se esta ejecutando en producción
@@ -83,9 +88,25 @@ gulp.task('serve', ['watch'], function() {
 });
 ```
 
-### 2.1.1 .babelrc
+### 2.1.1 package.json
 
-Browserify utiliza Babel a través del plugin babelify para transformar 
+Para poder trabajar con browserify debemos agregar 2 secciones mas al archivo package.json:
+
+```json
+"browser": {
+    "vue": "vue/dist/vue.common.js",
+    "jquery": "jquery/dist/jquery.slim.js"
+},
+"browserify-shim": {}
+```
+
+La sección b**rowser** es para cambiar el archivo que será referenciado al momento de utilizar require o import.
+
+La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos
+
+### 2.1.2 .babelrc
+
+Browserify utiliza Babel a través del plugin babelify para transformar nuestro código al código que el navegador entiende, pero es necesario decirle como para esto creamos un archivo llamado .babelrc con el siguiente contenido:
 
 ```json
 {
