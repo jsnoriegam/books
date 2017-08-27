@@ -164,7 +164,7 @@ Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 "use strict"
 
 const gulp = require('gulp');
-//Uglify Aplica compresi
+//Uglify minifica el javascript generado
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 
