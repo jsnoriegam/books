@@ -85,9 +85,9 @@ Que paquetes necesitamos para iniciar:
   * Jquery \(jquery\)
   * Twitter Bootstrap \(bootstrap\)
 * Y para desarrollar:
-  * Browserify \(browserify, browserify-shim, vueify, exorcist, babelify, uglifyify, watchify\)
+  * Browserify \(browserify, browserify-shim, vueify, babelify, watchify, envify\)
   * File system methods \(fs-extra\)
-  * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, \)
+  * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, gulp-sourcemaps, gulp-uglify\)
   * Babel \(babel-core, babel-preset-env, babel-plugin-transform-runtime\)
 
 Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los números de las versiones pueden ser diferentes\):
@@ -122,9 +122,11 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n�
     "browser-sync": "^2.18.13",
     "browserify": "^14.4.0",
     "browserify-shim": "^3.8.14",
-    "exorcist": "^0.4.0",
+    "envify": "^4.1.0",
+    "fs-extra": "^4.0.1",
     "gulp": "^3.9.1",
-    "uglifyify": "^4.0.3",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vueify": "^9.4.1",
@@ -141,7 +143,7 @@ Browserify es una herramienta que básicamente nos permite hacer **require** a l
 var Vue = require('vue');
 ```
 
-Y ademá nos permite crear 
+Y ademá nos permite crear
 
 ## Gulp
 
@@ -157,7 +159,67 @@ Esta instalación solo debe ser realizada una vez y servirá para cualquier proy
 
 Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 
-```
+```js
+"use strict"
+
+const gulp = require('gulp');
+
+const browserify = require('browserify');
+const browserifyShim = require('browserify-shim');
+const vueify = require('vueify');
+const babelify = require('babelify');
+const uglify = require('uglifyify');
+const exorcist = require('exorcist')
+const watchify = require('watchify');
+
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
+const bs = require('browser-sync').create();
+
+function createBundler(args) {
+    return browserify('./src/main.js', args)
+        .transform(browserifyShim)
+        .transform(vueify)
+        .transform(babelify)
+        .transform(uglify, {global: true});
+}
+
+function bundle(bundler) {
+    return bundler.bundle()
+        .pipe(exorcist('dist/app.js.map'))//extrae el .map del .js
+        .pipe(source('app.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('dist'))
+}
+
+const browserifyconf = {};
+
+gulp.task('build', function() {
+    process.env.NODE_ENV = 'production';
+    let args = Object.assign({}, browserifyconf, { debug: true });
+    const bundler = createBundler(args);
+    return bundle(bundler);
+});
+
+gulp.task('watch', function() {
+    let args = Object.assign({}, watchify.args, browserifyconf, { debug: true });
+    const bundler = createBundler(args).plugin(watchify);
+    bundle(bundler);
+    bundler.on('update', function() {
+        bundle(bundler);
+        bs.reload();
+    });
+});
+
+gulp.task('serve', ['watch'], function() {
+    bs.init({
+        server: {
+            baseDir: './',
+            index: 'index.html'
+        }
+    });
+});
 
 ```
 
