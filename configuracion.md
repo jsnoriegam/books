@@ -1,6 +1,6 @@
 # Configuración
 
-## 2.1 Gulpfile
+## 2.1 Gulpfile.js
 
 Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 
