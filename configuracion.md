@@ -110,6 +110,8 @@ gulp.task('serve', ['watch'], function() {
 });
 ```
 
+Este gulpfile establece que las fuentes del proyecto estarán en el directorio **src **y que el empaquetado de desarrollo estará en el directorio **dev** mientras que el empaquetado final estará en el directorio **dist**.
+
 ### 2.1.3 Browserify y Babel
 
 Browserify es una herramienta que básicamente nos permite hacer **require** a los paquetes de node \(npm\) desde el cliente del navegador Ej.:
