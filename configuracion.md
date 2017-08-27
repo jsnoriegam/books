@@ -126,7 +126,7 @@ Browserify utiliza package.json para referenciar los paquetes,:
 "browserify-shim": {}
 ```
 
-La sección **browser** es para cambiar el archivo que será referenciado al momento de utilizar require o import.
+La sección **browser** se utiliza para cambiar el archivo que será referenciado al momento de utilizar require o import.
 
 La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos y definir sus dependencias \(solamente si usamos **.transform\(browserifyShim\)**\)
 
@@ -140,5 +140,5 @@ Browserify utiliza Babel \([https://babeljs.io](https://babeljs.io)\) a través 
 }
 ```
 
-
+Para mas opciones de configuración ir a: [https://babeljs.io/docs/plugins/preset-env](https://babeljs.io/docs/plugins/preset-env)
 
