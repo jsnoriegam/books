@@ -135,7 +135,7 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n�
 
 ## Gulp
 
-Gulp es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
+Gulp \([https://gulpjs.com](https://gulpjs.com)\) es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
 
 Para utilizar Gulp además de los paquetes instalados anteriormente en el proyecto debemos instalar el paquete del cliente de linea de comandos de gulp, este paquete debe ser instaldo de manera global, esto lo hacemos con el siguiente comando:
 
@@ -143,5 +143,7 @@ Para utilizar Gulp además de los paquetes instalados anteriormente en el proyec
 npm install gulp-cli -g
 ```
 
+Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
 
+Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 
