@@ -100,9 +100,9 @@ Para poder trabajar con browserify debemos agregar 2 secciones mas al archivo pa
 "browserify-shim": {}
 ```
 
-La sección b**rowser** es para cambiar el archivo que será referenciado al momento de utilizar require o import.
+La sección **browser** es para cambiar el archivo que será referenciado al momento de utilizar require o import.
 
-La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos
+La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos y definir sus dependencias.
 
 ### 2.1.2 .babelrc
 
