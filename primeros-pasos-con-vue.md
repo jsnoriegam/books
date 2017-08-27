@@ -99,5 +99,5 @@ export default {
 </script>
 ```
 
-
+Como podemos ver vamos a trabajar con componentes de un solo archivo \([https://vuejs.org/v2/guide/single-file-components.html](https://vuejs.org/v2/guide/single-file-components.html)\)
 
