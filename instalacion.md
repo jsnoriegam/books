@@ -163,13 +163,17 @@ Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 "use strict"
 
 const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 
 const browserify = require('browserify');
 const browserifyShim = require('browserify-shim');
 const vueify = require('vueify');
+//Babel es un transpilador de Ecmascript 2015/16
 const babelify = require('babelify');
-const uglify = require('uglifyify');
-const exorcist = require('exorcist')
+//Envify me permite utilizar process.env.NODE_ENV dentro de la app
+//para determinar si el código se esta ejecutando en producción
+const envify = require('envify');
 const watchify = require('watchify');
 
 const source = require('vinyl-source-stream');
@@ -182,15 +186,19 @@ function createBundler(args) {
         .transform(browserifyShim)
         .transform(vueify)
         .transform(babelify)
-        .transform(uglify, {global: true});
+        .transform(envify)
+        //.transform(uglify, {global: true});
 }
 
-function bundle(bundler) {
+function bundle(bundler, dest = 'dist') {
     return bundler.bundle()
-        .pipe(exorcist('dist/app.js.map'))//extrae el .map del .js
+        //.pipe(exorcist(`${ dest }/app.js.map`))//extrae el .map del .js
         .pipe(source('app.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('dist'))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(dest))
 }
 
 const browserifyconf = {};
@@ -203,9 +211,10 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
+    process.env.NODE_ENV = 'development';
     let args = Object.assign({}, watchify.args, browserifyconf, { debug: true });
     const bundler = createBundler(args).plugin(watchify);
-    bundle(bundler);
+    bundle(bundler, 'dev');
     bundler.on('update', function() {
         bundle(bundler);
         bs.reload();
@@ -216,7 +225,7 @@ gulp.task('serve', ['watch'], function() {
     bs.init({
         server: {
             baseDir: './',
-            index: 'index.html'
+            index: 'index.dev.html'
         }
     });
 });
