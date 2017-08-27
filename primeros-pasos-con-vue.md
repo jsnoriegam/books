@@ -20,5 +20,29 @@ El primer paso para iniciar nuestra aplicación es crear el index.html, la pági
 </html>
 ```
 
-Puesto que vamos a utilizar la estructura base propuesta por el gulpfile.js, como segundo paso debemos crear un directorio llamado src y un archivo llamado main.js
+Puesto que vamos a utilizar la estructura base propuesta por el gulpfile.js, como segundo paso debemos crear un directorio llamado src y dentro los archivos: main.js, routes.js y app.vue.
+
+main.js será el archvo de arranque de nuestra aplicación:
+
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+import app from './app.vue'
+
+import routes from './routes'
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes
+});
+
+new Vue({
+    router,
+    render: (h) => h(app)
+}).$mount('#app');//id del elemento root
+```
+
+
 
