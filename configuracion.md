@@ -12,7 +12,11 @@ npm install gulp-cli -g
 
 Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
 
-Si no queremos o no podemos instalar el gulp-cli, tambien es posible utilizar gulp a través de npm configurando el comando en la sección **scripts** del package.json
+Si no queremos o no podemos instalar el gulp-cli, tambien es posible utilizar gulp a través de npm configurando el comando en la sección **scripts** del package.json y utilizando el comando:
+
+```
+npm run [nombre-del-script]
+```
 
 ### 2.1.1 Gulpfile.js
 
