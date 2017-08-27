@@ -122,7 +122,7 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n√
     "browser-sync": "^2.18.13",
     "browserify": "^14.4.0",
     "browserify-shim": "^3.8.14",
-    "fs-extra": "^4.0.1",
+    "exorcist": "^0.4.0",
     "gulp": "^3.9.1",
     "uglifyify": "^4.0.3",
     "vinyl-buffer": "^1.0.0",
@@ -135,7 +135,13 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n√
 
 ## Browserify
 
-Browserify es un 
+Browserify es una herramienta que b√°sicamente nos permite hacer **require** a los paquetes de node \(npm\) desde el cliente del navegador Ej.:
+
+```js
+var Vue = require('vue');
+```
+
+Y adem√° nos permite crear 
 
 ## Gulp
 
