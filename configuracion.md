@@ -110,7 +110,7 @@ gulp.task('serve', ['watch'], function() {
 });
 ```
 
-Este gulpfile establece que las fuentes del proyecto estarán en el directorio **src **y que el empaquetado de desarrollo estará en el directorio **dev** mientras que el empaquetado final estará en el directorio **dist**.
+Este gulpfile establece que las fuentes del proyecto estarán en el directorio **src **y que el empaquetado de desarrollo estará en el directorio **dev** mientras que el empaquetado final estará en el directorio **dist**.  Además nos indica que utilizará el archivo **main.js** como script de inicio.
 
 ### 2.1.3 Browserify y Babel
 
