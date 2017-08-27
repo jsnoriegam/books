@@ -133,6 +133,10 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n�
 }
 ```
 
+## Browserify
+
+Browserify es un 
+
 ## Gulp
 
 Gulp \([https://gulpjs.com](https://gulpjs.com)\) es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
@@ -146,4 +150,10 @@ npm install gulp-cli -g
 Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
 
 Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
+
+```
+
+```
+
+
 
