@@ -87,8 +87,7 @@ gulp.task('watch', function() {
     const bundler = createBundler(args).plugin(watchify);
     bundle(bundler, 'dev');
     bundler.on('update', function() {
-        bundle(bundler);
-        bs.reload();
+        bundle(bundler, 'dev').pipe(bs.reload({ stream: true }));
     });
 });
 
@@ -128,7 +127,7 @@ Browserify utiliza package.json para referenciar los paquetes,:
 
 La sección **browser** se utiliza para cambiar el archivo que será referenciado al momento de utilizar require o import.
 
-> jquery.slim es una versión de jquery que no contine ajax, animaciones , ni código obsoleto
+> jquery.slim es una versión de jquery que no contine los metodos para ajax, animaciones , ni los obsoletos
 
 La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos y definir sus dependencias \(solamente si usamos **.transform\(browserifyShim\)**\)
 
