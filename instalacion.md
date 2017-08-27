@@ -87,7 +87,7 @@ Que paquetes necesitamos para iniciar:
 * Y para desarrollar:
   * Browserify \(browserify, browserify-shim, vueify, babelify, watchify, envify\)
   * File system methods \(fs-extra\)
-  * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, gulp-sourcemaps, gulp-uglify\)
+  * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, gulp-sourcemaps, gulp-uglify, gulp-plumber\)
   * Babel \(babel-core, babel-preset-env, babel-plugin-transform-runtime\)
 
 Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n√∫meros de las versiones pueden ser diferentes\):
@@ -125,6 +125,7 @@ Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los n√
     "envify": "^4.1.0",
     "fs-extra": "^4.0.1",
     "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
@@ -163,6 +164,7 @@ Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 "use strict"
 
 const gulp = require('gulp');
+//Uglify Aplica compresi
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 
