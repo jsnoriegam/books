@@ -77,9 +77,69 @@ npm install [package_name] --save
 
 Que paquetes necesitamos para iniciar:
 
+* Requeridos para el proyecto:
+  * Vue \(vue\)
+  * Vue Router \(vue-router\)
+  * Axios \(axios\)
+  * Lodash \(lodash\)
+  * Jquery \(jquery\)
+  * Twitter Bootstrap \(bootstrap\)
+* Y para desarrollar:
+  * Browserify \(browserify, browserify-shim, vueify, exorcist, babelify, uglifyify, watchify\)
 
+  * File system methods \(fs-extra\)
+
+  * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, \)
+
+  * Babel \(babel-core, babel-preset-env, babel-plugin-transform-runtime\)
+
+Al terminar nuestro package.json debe verse asi \(los números de las versiones pueden ser diferentes\):
+
+```json
+{
+  "name": "movies-api-client",
+  "version": "0.0.1",
+  "description": "Movies API Client",
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "Movies",
+    "Vue.js"
+  ],
+  "author": "Juan S",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
+    "fs-extra": "^4.0.1",
+    "gulp": "^3.9.1",
+    "uglifyify": "^4.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vueify": "^9.4.1",
+    "watchify": "^3.9.0"
+  }
+}
+
+```
 
 ## Gulp
+
+Gulp es un sistema de construcción basado en flujos \(streaming based build system\)
 
 
 
