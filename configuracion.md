@@ -1,6 +1,20 @@
 # Configuración
 
-## 2.1 Gulpfile.js
+## 2.1 Gulp
+
+Gulp \([https://gulpjs.com](https://gulpjs.com)\) es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
+
+Para utilizar Gulp además de los paquetes instalados anteriormente en el proyecto debemos instalar el paquete del cliente de linea de comandos de gulp, este paquete debe ser instaldo de manera global, esto lo hacemos con el siguiente comando:
+
+```
+npm install gulp-cli -g
+```
+
+Esta instalación solo debe ser realizada una vez y servirá para cualquier proyecto futuro.
+
+Si no queremos o no podemos instalar el gulp-cli, tambien es posible utilizar gulp a través de npm configurando el comando en la sección **scripts** del package.json
+
+### 2.1.1 Gulpfile.js
 
 Gulp requiere que las tareas sean definidas en un archivo llamado gulpfile.js
 
@@ -88,9 +102,17 @@ gulp.task('serve', ['watch'], function() {
 });
 ```
 
-### 2.1.1 package.json
+### 2.1.3 Browserify y Babel
 
-Para poder trabajar con browserify debemos agregar 2 secciones mas al archivo package.json:
+Browserify es una herramienta que básicamente nos permite hacer **require** a los paquetes de node \(npm\) desde el cliente del navegador Ej.:
+
+```js
+var Vue = require('vue');
+```
+
+Y además nos permite crear bundles que mejorarán el rendimiento de nuestra aplicación web.
+
+Browserify utiliza package.json para referenciar los paquetes,:
 
 ```json
 "browser": {
@@ -102,11 +124,9 @@ Para poder trabajar con browserify debemos agregar 2 secciones mas al archivo pa
 
 La sección **browser** es para cambiar el archivo que será referenciado al momento de utilizar require o import.
 
-La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos y definir sus dependencias.
+La sección **browserify-shim** nos permite referenciar paquetes que no son compatibles con browserify para habilitarlos y definir sus dependencias \(solamente si usamos **.transform\(browserifyShim\)**\)
 
-### 2.1.2 .babelrc
-
-Browserify utiliza Babel a través del plugin babelify para transformar nuestro código al código que el navegador entiende, pero es necesario decirle como para esto creamos un archivo llamado .babelrc con el siguiente contenido:
+Browserify utiliza Babel \([https://babeljs.io](https://babeljs.io)\) a través del plugin babelify para transformar nuestro código al código que el navegador entiende, pero es necesario decirle como, y para esto debemos crear un archivo llamado .babelrc con el siguiente contenido:
 
 ```json
 {
