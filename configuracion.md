@@ -26,6 +26,7 @@ Este es un ejemplo de un gulpfile que podemos usar como base para cualquier proy
 "use strict"
 
 const gulp = require('gulp');
+//Plumber simplifica el manejo de errores en gulp
 const plumber = require('gulp-plumber');
 //Uglify minifica el javascript generado
 const uglify = require('gulp-uglify');
