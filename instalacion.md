@@ -86,14 +86,11 @@ Que paquetes necesitamos para iniciar:
   * Twitter Bootstrap \(bootstrap\)
 * Y para desarrollar:
   * Browserify \(browserify, browserify-shim, vueify, exorcist, babelify, uglifyify, watchify\)
-
   * File system methods \(fs-extra\)
-
   * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, \)
-
   * Babel \(babel-core, babel-preset-env, babel-plugin-transform-runtime\)
 
-Al terminar nuestro package.json debe verse asi \(los números de las versiones pueden ser diferentes\):
+Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los números de las versiones pueden ser diferentes\):
 
 ```json
 {
@@ -134,12 +131,17 @@ Al terminar nuestro package.json debe verse asi \(los números de las versiones 
     "watchify": "^3.9.0"
   }
 }
-
 ```
 
 ## Gulp
 
-Gulp es un sistema de construcción basado en flujos \(streaming based build system\)
+Gulp es un sistema de construcción basado en flujos, cuya principal utilidad es la automatización de las tareas.
+
+Para utilizar Gulp además de los paquetes instalados anteriormente en el proyecto debemos instalar el paquete del cliente de linea de comandos de gulp, este paquete debe ser instaldo de manera global, esto lo hacemos con el siguiente comando:
+
+```
+npm install gulp-cli -g
+```
 
 
 
