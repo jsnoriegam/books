@@ -14,15 +14,11 @@ El primer paso para iniciar nuestra aplicación es crear el index.html, la pági
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
-            <router-view></router-view>
-        </div>
+        <div id="app"></div>
         <script src="dist/app.js"></script>
     </body>
 </html>
 ```
 
 Puesto que vamos a utilizar la estructura base propuesta por el gulpfile.js, como segundo paso debemos crear un directorio llamado src y un archivo llamado main.js
-
-
 
