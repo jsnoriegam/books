@@ -1,6 +1,6 @@
 # Trabajando con datos externos
 
-## 4.1. Axios \([https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)\)
+## 4.1 Axios \([https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)\)
 
 Axios es un cliente HTTP para node.js y navegadores, con soporte para la API [Promise](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise).  Es una librería simple y altamente configurable, inspirada en el servicio $http de angular.
 
@@ -60,11 +60,9 @@ axios.post('/user', {
 });
 ```
 
-## 4.2. Autenticación
+## 4.2 Autenticación
 
-4.2.1 
+4.2.1
 
 4.2.2
-
-
 
