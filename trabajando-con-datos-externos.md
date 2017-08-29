@@ -62,5 +62,9 @@ axios.post('/user', {
 
 ## 4.2. Autenticación
 
+4.2.1 
+
+4.2.2
+
 
 
