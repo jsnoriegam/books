@@ -100,7 +100,7 @@ gulp.task('serve', ['watch'], function() {
     bs.init({
         server: {
             baseDir: './',
-            index: 'index.dev.html'
+            index: 'index.html'
         },
         serveStatic: [{
             route: '/dist',
