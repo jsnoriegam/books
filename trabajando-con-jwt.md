@@ -76,6 +76,7 @@ class AuthService {
     }
 
     configRouter(router) {
+        // Es necesario configurar el router para verificar la validez del token en cada cambio de página
         router.beforeEach((to, from, next) => {
             if (to.matched.some(record => record.meta.auth)) {
                 if(!this.tokenValido()) {
@@ -103,7 +104,7 @@ class AuthService {
             return request;
         }, (error) => Promise.reject(error));
 
-        // Interceptamos todas las respuestas
+        // Interceptamos todas las respuestas y borramos el token en caso de un error 401
         axios.interceptors.response.use((response) => {
             if(response.status === 401) {
                 borrarToken();
