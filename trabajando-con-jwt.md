@@ -20,6 +20,10 @@ let tokenDecoded = jwtDecode(token);
 
 ## 6.2 AuthService
 
+Es recomendable crear un servicio para las operaciones de de autenticación.
+
+> El token es almacenado utilizando localStorage \([https://developer.mozilla.org/es/docs/Web/API/Window/localStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)\)
+
 ```js
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
@@ -98,7 +102,7 @@ class AuthService {
             }
             return request;
         }, (error) => Promise.reject(error));
-        
+
         // Interceptamos todas las respuestas
         axios.interceptors.response.use((response) => {
             if(response.status === 401) {
@@ -113,8 +117,6 @@ class AuthService {
 
 export default new AuthService();
 ```
-
-
 
 
 
