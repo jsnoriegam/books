@@ -156,7 +156,7 @@ const routes = [
 export default routes
 ```
 
-Debemos hacer las modificaciones necesarias a main.js
+Debemos hacer las modificaciones necesarias a **main.js**
 
 ```js
 import Vue from 'vue'
@@ -228,8 +228,6 @@ export default {
 }
 </script>
 ```
-
->
 
 
 
