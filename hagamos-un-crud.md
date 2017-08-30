@@ -180,5 +180,5 @@ export default {
 </script>
 ```
 
-
+Las funciones \(Ej. obtenerPeliculas, agregarPelicula, modificarPelicula, eliminarPelicula\) pueden pasarse a otro archivo .js \(preferiblemente un servicio\), en caso de que el componente se vuelva muy pesado.
 
