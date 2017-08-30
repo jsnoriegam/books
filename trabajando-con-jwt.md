@@ -71,7 +71,7 @@ class AuthService {
             return false;
         }
         let tokenDecodificado = jwtDecode(token);
-        let ahora = Date.UTC() / 1000;
+        let ahora = Date.now() / 1000;
         //comparo la fecha de expiración del token con la fecha actual (ambas en UTC)
         return tokenDecodificado.exp > ahora;
     }
