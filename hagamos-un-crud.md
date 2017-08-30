@@ -182,3 +182,7 @@ export default {
 
 Las funciones \(Ej. obtenerPeliculas, agregarPelicula, modificarPelicula, eliminarPelicula\) pueden pasarse a otro archivo .js \(preferiblemente un servicio\), en caso de que el componente se vuelva muy pesado.
 
+> No olvide agregar el componente al archivo routes.js y al menú
+
+
+
