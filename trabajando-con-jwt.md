@@ -131,10 +131,6 @@ import routes from './routes'
 
 import authService from './services/auth-service'
 
-if(process.env.NODE_ENV !== 'production') {
-    console.log('Development mode started');
-}
-
 Vue.use(VueRouter);
 
 const router = new VueRouter({
