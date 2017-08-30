@@ -119,6 +119,43 @@ class AuthService {
 export default new AuthService();
 ```
 
+Es necesario indicar al router que rutas necesitan verificar autenticación, para lo cual usamos **meta**:
+
+```js
+import login from './pages/login.vue'
+import dashboard from './pages/dashboard.vue'
+import peliculas from './pages/peliculas.vue'
+import personas from './pages/personas.vue'
+
+const routes = [
+    {
+        name: 'login',
+        path: '/login',
+        component: login
+    },
+    {
+        name: 'dashboard',
+        path: '/',
+        component: dashboard,
+        meta: { auth: true }
+    },
+    {
+        name: 'peliculas',
+        path: '/peliculas',
+        component: peliculas,
+        meta: { auth: true }
+    },
+    {
+        name: 'personas',
+        path: '/personas',
+        component: personas,
+        meta: { auth: true }
+    }
+];
+
+export default routes
+```
+
 Debemos hacer las modificaciones necesarias a main.js
 
 ```js
@@ -190,8 +227,9 @@ export default {
     }
 }
 </script>
-
 ```
+
+>
 
 
 
