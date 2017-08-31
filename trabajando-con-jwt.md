@@ -190,19 +190,19 @@ Por último elaboremos una página de login:
 <template>
     <div>
         <h3>Ingresar al sistema</h3>
-        <div class="row">
-            <div class="col-md-4">
+        <div>
+            <div>
                 <form @submit.prevent="login">
-                    <div class="form-group">
+                    <div>
                         <label for="usuario_username">Nombre de usuario:</label>
-                        <input type="text" class="form-control" id="usuario_username" v-model="usuario.username">
+                        <input type="text" id="usuario_username" v-model="usuario.username">
                     </div>
-                    <div class="form-group">
+                    <div>
                         <label for="usuario_password">Password:</label>
-                        <input type="password" class="form-control" id="usuario_password" v-model="usuario.password">
+                        <input type="password" id="usuario_password" v-model="usuario.password">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit">Ingresar</button>
                     </div>
                 </form>
             </div>
