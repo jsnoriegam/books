@@ -120,7 +120,7 @@ class AuthService {
 export default new AuthService();
 ```
 
-Es necesario indicar al router que rutas necesitan verificar autenticación, para lo cual usamos **meta**:
+Es necesario indicar al router para que rutas se necesita verificar autenticación, para lo cual usamos **meta**:
 
 ```js
 import login from './pages/login.vue'
