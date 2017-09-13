@@ -91,6 +91,7 @@ class AuthService {
         });
     }
 
+    // Utilizamos el configurador global de axios.
     configAxios() {
         // Interceptamos todas las peticiones (excepto /auth/token) y le agregamos el encabezado Authorizarion
         axios.interceptors.request.use((request) => {
