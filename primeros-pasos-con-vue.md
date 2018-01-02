@@ -41,7 +41,7 @@ const router = new VueRouter({
 new Vue({
     router,
     render: (h) => h(app)
-}).$mount('#app');//id del elemento root
+}).$mount('#app');//id del elemento raiz dentro de index.html
 ```
 
 routes.js contendrá las rutas de nuestra aplicación:
