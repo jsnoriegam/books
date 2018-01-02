@@ -99,5 +99,7 @@ export default {
 </script>
 ```
 
+Agregamos los enlaces del menú utilizando router-link \([https://router.vuejs.org/en/api/router-link.html](https://router.vuejs.org/en/api/router-link.html)\) para que no haya una dependencia con las rutas.
+
 Como podemos ver vamos a trabajar con componentes de un solo archivo \([https://vuejs.org/v2/guide/single-file-components.html](https://vuejs.org/v2/guide/single-file-components.html)\)
 
