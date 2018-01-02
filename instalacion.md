@@ -12,8 +12,6 @@ npm init
 
 Luego debemos responder las preguntas que npm nos haga:
 
-See \`npm help json\` for definitive documentation on these fields
-
     npm init
     This utility will walk you through creating a package.json file.
     It only covers the most common items, and tries to guess sensible defaults.
