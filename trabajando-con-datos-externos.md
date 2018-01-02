@@ -4,7 +4,9 @@
 
 Axios es un cliente HTTP para node.js y navegadores, con soporte para la API [Promise](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise).  Es una librería simple y altamente configurable, inspirada en el servicio $http de angular.
 
-Utilizaremos axios para consumir nuestra API web \([https://jsnoriegam.gitbooks.io/introduccion-al-desarrollo-de-apis-web-con-net-co/content/](https://jsnoriegam.gitbooks.io/introduccion-al-desarrollo-de-apis-web-con-net-co/content/)\)
+También es posible utilizar vue-resource \([https://github.com/pagekit/vue-resource](https://github.com/pagekit/vue-resource)\).
+
+Utilizaremos axios para consumir la API web \([https://github.com/jsnoriegam/dotnetmovies2.git](https://github.com/jsnoriegam/dotnetmovies2.git)\)
 
 ### 4.1.1 Métodos \(API de Axios\)
 
