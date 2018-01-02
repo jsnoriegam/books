@@ -90,7 +90,7 @@ Que paquetes necesitamos para iniciar:
   * Gulp \(gulp, vinyl-buffer, vinyl-source-stream, gulp-sourcemaps, gulp-uglify, gulp-plumber\)
   * Babel \(babel-core, babel-preset-env, babel-plugin-transform-runtime\)
 
-Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los números de las versiones pueden ser diferentes\):
+Al terminar nuestro archivo **package.json** debe verse mas o menos asi \(los números de las versiones pueden ser diferentes, las versiones de este ejemplo eran las últimas a la fecha de la creación de este libro\):
 
 ```json
 {
